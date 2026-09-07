@@ -12,7 +12,7 @@ services:
           name: stocksense-db
           property: connectionString
       - key: FRONTEND_ORIGINS
-        value: https://stocksense-frontend.onrender.com
+        value: https://stocksense-frontend-ai0r.onrender.com
 
   - type: web
     name: stocksense-frontend

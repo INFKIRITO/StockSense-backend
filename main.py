@@ -22,10 +22,15 @@ allowed_origins = [
     for origin in os.getenv("FRONTEND_ORIGINS", "http://localhost:8080").split(",")
     if origin.strip()
 ]
+allowed_origin_regex = os.getenv(
+    "FRONTEND_ORIGIN_REGEX",
+    r"https://stocksense-frontend(?:-[a-z0-9]+)?\.onrender\.com",
+)
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
+    allow_origin_regex=allowed_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
