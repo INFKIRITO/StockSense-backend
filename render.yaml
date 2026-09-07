@@ -31,4 +31,5 @@ services:
 
 databases:
   - name: stocksense-db
+    region: singapore
     plan: free
